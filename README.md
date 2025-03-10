@@ -120,7 +120,7 @@ Run the service:
 ________________________________________
 API Documentation
 •	API Gateway:
-	Access Swagger documentation at http://localhost:8000/swagger/.
+	Access Swagger documentation at http://localhost:8002/swagger/.
 •	Task Service:
 	Access FastAPI's built-in Swagger documentation at http://localhost:8002/docs.
 ________________________________________
