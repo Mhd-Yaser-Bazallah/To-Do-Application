@@ -61,74 +61,63 @@ Each service requires a .env file for configuration. Below are the required vari
 Authentication Service
 Create a .env file in the Authentication_Service directory with the following content:
 
-.env
-
-DB_NAME=./db.sqlite3
-
-JWT_SECRET=yaserbazallah
+	.env
+	DB_NAME=./db.sqlite3
+	JWT_SECRET=yaserbazallah
 
 API Gateway
 Create a .env file in the api_gateway directory with the following content:
 
-.env 
-
-TASK_SERVICE_URL=http://127.0.0.1:8000
-
-AUTH_SERVICE_URL=http://127.0.0.1:8001
-
-JWT_SECRET=yaserbazallah
+	.env 
+	TASK_SERVICE_URL=http://127.0.0.1:8000
+	AUTH_SERVICE_URL=http://127.0.0.1:8001
+	JWT_SECRET=yaserbazallah
  
 ________________________________________
 #Running the Services
-1.      Run the RabbitMQ container using Docker
-	bash
+1. Run the RabbitMQ container using Docker
+   
+	 ```bash
         docker pull rabbitmq:3-management
-
   	docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 -p 5672:5672 rabbitmq:3-management
 
  	
-   
-3.	Authentication Service:
+2.	Authentication Service:
 	Navigate to the Authentication_Service directory.
 	Install dependencies:
 
-bash
+ 		```bash
+	       pip install -r requirements.txt
 
-pip install -r requirements.txt
+       Run the service:
 
-Run the service:
-
-bash
-
-python manage.py runserver 8001
+ 		```bash
+		python manage.py runserver 8001
 
 3.	API Gateway:
 	Navigate to the api_gateway directory.
 	Install dependencies:
 
-bash
+		 ```bash
+		pip install -r requirements.txt
 
-pip install -r requirements.txt
+	Run the service:
 
-Run the service:
-
-bash
-
-python manage.py runserver 8002
+		 ```bash
+		python manage.py runserver 8002
 
 4.	Task Service:
 	Navigate to the Task_Service directory.
 	Install dependencies:
 
-bash
+		 ```bash	
+		pip install -r requirements.txt
 
-pip install -r requirements.txt
+	Run the service:
+	 
+		 ```bash
+		uvicorn main:app --reload
 
-Run the service:
-
-bash
-
-uvicorn main:app --reload 
 ________________________________________
 API Documentation
 •	API Gateway:
