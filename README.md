@@ -54,14 +54,6 @@ Prerequisites
 2.	Python:
    
 	Ensure Python 3.8+ is installed.
-
-4.	RabbitMQ:
-	
- 	Run the RabbitMQ container using Docker:
-
-  	docker run -d --hostname rabbitmq --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
-  	
-	Access the RabbitMQ management interface at http://localhost:15672 (username: guest, password: guest).
 ________________________________________
 #Environment Variables
 Each service requires a .env file for configuration. Below are the required variables:
@@ -88,7 +80,16 @@ JWT_SECRET=yaserbazallah
  
 ________________________________________
 #Running the Services
-1.	Authentication Service:
+1.      Run the RabbitMQ container using Docker
+	bash
+
+	docker pull rabbitmq:3-management
+
+  	docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 -p 5672:5672 rabbitmq:3-management
+
+ 	
+   
+2.	Authentication Service:
 	Navigate to the Authentication_Service directory.
 	Install dependencies:
 
@@ -102,7 +103,7 @@ bash
 
 python manage.py runserver 8001
 
-2.	API Gateway:
+3.	API Gateway:
 	Navigate to the api_gateway directory.
 	Install dependencies:
 
@@ -116,7 +117,7 @@ bash
 
 python manage.py runserver 8002
 
-3.	Task Service:
+4.	Task Service:
 	Navigate to the Task_Service directory.
 	Install dependencies:
 
