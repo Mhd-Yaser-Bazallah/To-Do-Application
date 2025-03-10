@@ -121,8 +121,6 @@ ________________________________________
 API Documentation
 •	API Gateway:
 	Access Swagger documentation at http://localhost:8002/swagger/.
-•	Task Service:
-	Access FastAPI's built-in Swagger documentation at http://localhost:8002/docs.
 ________________________________________
 Workflow
 1.	User Registration:
