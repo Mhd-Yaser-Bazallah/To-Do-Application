@@ -82,14 +82,13 @@ ________________________________________
 #Running the Services
 1.      Run the RabbitMQ container using Docker
 	bash
-
-	docker pull rabbitmq:3-management
+        docker pull rabbitmq:3-management
 
   	docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 -p 5672:5672 rabbitmq:3-management
 
  	
    
-2.	Authentication Service:
+3.	Authentication Service:
 	Navigate to the Authentication_Service directory.
 	Install dependencies:
 
